@@ -4,7 +4,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 export async function loader({ params }) {
-    const res = await axios.get('http://localhost:3000/menus/'+ params.menuId)
+    const res = await axios.get(`${import.meta.env.VITE_API_URL}+ params.menuId`)
     const menu = res.data
     return { menu }
 }
